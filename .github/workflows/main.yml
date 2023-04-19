@@ -1,5 +1,4 @@
 name: Build and Deploy
-run-name: ${{ github.actor }} start worflow 2
 
 on:
   workflow_dispatch: 
@@ -11,19 +10,31 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm install
-      - run: npm run build --dev
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: artifact-frontend-${{github.run_number}}
-          path: |
-            dist
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: '14.x'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run build --dev
+
+    - name: Zip artifact
+      run: zip -r artifact.zip ./dist
+    
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: artifact-frontend-${{ github.run_number }}
+        path: ./dist
+  
   deployment:
     runs-on: ubuntu-latest
     needs: build
