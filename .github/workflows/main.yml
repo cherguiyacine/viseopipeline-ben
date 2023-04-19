@@ -38,7 +38,7 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     needs: build
-    environment: dev
+    environment: deploy
 
     steps:
     - name: Download build artifacts
@@ -46,7 +46,7 @@ jobs:
       with:
         name: artifact-frontend-${{ github.run_number }}
         path: ./dist
-        
+
     - name: Login to AWS
       uses: aws-actions/configure-aws-credentials@v1
       with:
