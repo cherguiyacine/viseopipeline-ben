@@ -48,7 +48,7 @@ jobs:
         path: ./dist
 
     - name: Unzip artifact
-      run: unzip /home/runner/work/viseopipeline-ben/viseopipeline-ben/dist
+      run: unzip /home/runner/work/viseopipeline-ben/viseopipeline-ben/dist/artifact-frontend-${{ github.run_number }}
 
     - name: Login to AWS
       uses: aws-actions/configure-aws-credentials@v1
