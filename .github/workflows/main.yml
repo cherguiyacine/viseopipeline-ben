@@ -48,6 +48,8 @@ jobs:
         path: ./dist
 
     - name: Unzip artifact
+      run: ls 
+      run: cd ./dist
       run: unzip ./dist/
 
     - name: Login to AWS
