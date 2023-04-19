@@ -9,12 +9,13 @@ on:
   path: ./src
 
 jobs:
-  check-bats-version:
+  buils:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+          node-version: 16
+      - run: npm install -g @angular/cli
+      - run: ng build
+      - run: ls
