@@ -55,4 +55,5 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION }}
 
     - name: Deploy to S3
-      run:  aws s3 cp ./dist/viseo-hello-world/ s3://viseopipeline-ben
+      run: aws s3 sync ./dist/viseo-hello-world/ s3://viseopipeline-ben --delete
+
