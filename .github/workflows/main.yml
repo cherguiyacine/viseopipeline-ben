@@ -45,10 +45,10 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: artifact-frontend-${{ github.run_number }}
-        path: ./dist
+        path: /usr/bin/test
 
     - name: Unzip artifact
-      run: unzip ./dist/artifact
+      run: unzip /usr/bin/dist
 
     - name: Login to AWS
       uses: aws-actions/configure-aws-credentials@v1
