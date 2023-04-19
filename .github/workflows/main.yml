@@ -1,5 +1,5 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
+name: Build and Deploy
+run-name: ${{ github.actor }} start worflow
 on: [push]
 jobs:
   check-bats-version:
