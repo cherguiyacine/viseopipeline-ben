@@ -1,6 +1,13 @@
 name: Build and Deploy
 run-name: ${{ github.actor }} start worflow
-on: [push]
+
+on:
+ push:
+  branches:
+    - main
+  path: ./src
+ workflow_dispatch:
+
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
