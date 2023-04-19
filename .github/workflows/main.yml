@@ -2,11 +2,11 @@ name: Build and Deploy
 run-name: ${{ github.actor }} start worflow 2
 
 on:
- workflow_dispatch:
- push:
-  branches:
-    - master
-  path: ./src
+  workflow_dispatch: 
+  push:
+    branches:
+      - main
+    paths: ./src
 
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
           name: artifact-frontend-${{github.run_number}}
           path: |
             dist
-  deploy:
+  deployment:
     steps:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
