@@ -1,12 +1,12 @@
 name: Build and Deploy
-run-name: ${{ github.actor }} start worflow 2
+run-name: ${{ github.actor }} start worflow
 
 on:
+ workflow_dispatch:
  push:
   branches:
     - main
   path: ./src
- workflow_dispatch:
 
 jobs:
   check-bats-version:
