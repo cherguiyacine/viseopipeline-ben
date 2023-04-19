@@ -1,5 +1,5 @@
 name: Build and Deploy
-run-name: ${{ github.actor }} start worflow
+run-name: ${{ github.actor }} start worflow 2
 
 on:
  workflow_dispatch:
@@ -9,7 +9,7 @@ on:
   path: ./src
 
 jobs:
-  buils:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
