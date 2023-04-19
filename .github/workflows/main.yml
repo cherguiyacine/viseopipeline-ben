@@ -48,7 +48,7 @@ jobs:
         path: ./dist
 
     - name: Unzip artifact
-      run: unzip ./dist/artifact.zip
+      run: unzip ./dist/artifact
 
     - name: Login to AWS
       uses: aws-actions/configure-aws-credentials@v1
