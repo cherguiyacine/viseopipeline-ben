@@ -49,8 +49,13 @@ jobs:
 
     - name: Unzip artifact
       run: ls 
+    - name: Install dependencies
+
       run: cd ./dist
+    - name: Install dependencies
       run: ls
+    - name: Install dependencies
+
       run: unzip ./dist/
 
     - name: Login to AWS
