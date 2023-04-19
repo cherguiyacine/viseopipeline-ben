@@ -45,7 +45,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: artifact-frontend-${{ github.run_number }}
-        path: /usr/bin/test
+        path: /usr/bin/dist
 
     - name: Unzip artifact
       run: unzip /usr/bin/dist
